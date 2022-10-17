@@ -169,6 +169,9 @@ class FireworkSparkler extends Firework{
   }
   
   public void move(){
+    if (x < -100 || x > width + 100 || y > height + 100) {
+      active = false;
+    }
     for(int i = 0; i < children; i ++){
       if(random(1) < .05f){
         float angle = random(TAU);
